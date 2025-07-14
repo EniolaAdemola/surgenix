@@ -13,8 +13,7 @@
 
 ## 📎 Repository Link
 
-👉 [Original Repository](https://github.com/genai-works-org/genai-agentos) (Forked from)
-👉 [Surgenix Fork](https://github.com/genai-works-org/genai-agentos)
+👉 This [surgenix repository](https://github.com/EniolaAdemola/surgenix) repo was (Forked from) [Original Repository](https://github.com/genai-works-org/genai-agentos)
 
 This project is a **fork** of the original GenAI AgentOS repository, enhanced with **Surgenix patient care agents** and specialized healthcare functionality.
 
