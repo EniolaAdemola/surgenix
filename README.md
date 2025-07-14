@@ -1,41 +1,74 @@
-# 🐍 GenAI Agents Infrastructure
+# 🏥 Surgenix - GenAI Agents Infrastructure
 
-This repository provides the complete infrastructure for running GenAI agents, including:
+**Surgenix** is a comprehensive patient care system built on GenAI agents infrastructure. This repository provides the complete infrastructure for running GenAI agents, including:
 
-* Backend
-* Router
-* Master Agents
-* PostgreSQL Database
-* Frontend
-* CLI
-* Redis
-* Celery
+- Backend
+- Router
+- Master Agents
+- PostgreSQL Database
+- Frontend
+- CLI
+- Redis
+- Celery
 
 ## 📎 Repository Link
 
-👉 [GitHub Repository](https://github.com/genai-works-org/genai-agentos)
+👉 [Original Repository](https://github.com/genai-works-org/genai-agentos) (Forked from)
+👉 [Surgenix Fork](https://github.com/genai-works-org/genai-agentos)
+
+This project is a **fork** of the original GenAI AgentOS repository, enhanced with **Surgenix patient care agents** and specialized healthcare functionality.
+
+## 🏥 Surgenix Agents & Components
+
+All built agents, MCP servers, and A2A cards are located in the **`cli/`** directory with detailed READMEs:
+
+### 🤖 **Patient Care Agents**
+
+- **Welcome Agent (Mila)** - [`cli/agents/welcome_agent/`](cli/agents/welcome_agent/) - Friendly first-contact agent for patient onboarding
+- **Discharge Summary Agent** - [`cli/agents/discharge_summary/`](cli/agents/discharge_summary/) - Processes and analyzes medical discharge documents
+- **Activity Agent** - [`cli/agents/activity_agent/`](cli/agents/activity_agent/) - Provides recovery exercises and wellness activities
+
+### 🔌 **A2A Cards**
+
+- **Lab Location Agent** - [`cli/a2a/lab_location_agent/`](cli/a2a/lab_location_agent/) - Simple A2A agent for finding medical facilities
+
+### 🛠️ **MCP Servers**
+
+- **Text to Audio** - [`cli/mcp/text_to_audio/`](cli/mcp/text_to_audio/) - Convert text to speech functionality
+- **Language Translator** - [`cli/mcp/language_translator/`](cli/mcp/language_translator/) - Multi-language translation support
+
+Each component includes comprehensive documentation, setup instructions, and usage examples. See the individual README files for detailed information.
 
 ## 🛠️ Readme Files
 
-* [CLI](cli/README.md)
-* [Backend](backend/README.md)
-* [Master Agents](master-agent/README.md)
-* [Router](router/README.md)
-* [Frontend](frontend/README.md)
+- [CLI](cli/README.md)
+- [Backend](backend/README.md)
+- [Master Agents](master-agent/README.md)
+- [Router](router/README.md)
+- [Frontend](frontend/README.md)
 
 ## 📄️ License
-* [MIT](LICENSE)
 
+- [MIT](LICENSE)
 
 ## 🧠 Supported Agent Types
 
-The system supports multiple kinds of Agents:
+The Surgenix system supports multiple kinds of Agents for comprehensive patient care:
 
-| Agent Type       | Description                                                                                   |
-|------------------|-----------------------------------------------------------------------------------------------|
-| **GenAI Agents** | Connected via [`genai-protocol`](https://pypi.org/project/genai-protocol/) library interface. |
-| **MCP Servers**  | MCP (Model Context Protocol) servers can be added by pasting their URL in the UI.             |
-| **A2A Servers**  | A2A (Agent to Agent Protocol) servers can be added by pasting their URL in the UI.            |
+| Agent Type       | Description                                                                                   | Surgenix Examples                                      |
+| ---------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **GenAI Agents** | Connected via [`genai-protocol`](https://pypi.org/project/genai-protocol/) library interface. | Welcome Agent, Discharge Summary Agent, Activity Agent |
+| **MCP Servers**  | MCP (Model Context Protocol) servers can be added by pasting their URL in the UI.             | Text-to-Audio, Language Translator                     |
+| **A2A Servers**  | A2A (Agent to Agent Protocol) servers can be added by pasting their URL in the UI.            | Lab Location Agent                                     |
+
+### 🏥 **Healthcare-Focused Architecture**
+
+Surgenix agents are specifically designed for **post-surgery patient care and recovery**, providing:
+
+- **Patient onboarding** and system introductions
+- **Medical document processing** and analysis
+- **Recovery activity** recommendations and guidance
+- **Facility location** services for follow-up care
 
 ---
 
@@ -43,12 +76,12 @@ The system supports multiple kinds of Agents:
 
 Make sure you have the following installed:
 
-* [Docker](https://www.docker.com/)
-* [Docker Compose](https://docs.docker.com/compose/)
-* [`make`](https://www.gnu.org/software/make/) (optional)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [`make`](https://www.gnu.org/software/make/) (optional)
 
-  * macOS: `brew install make`
-  * Linux: `sudo apt-get install make`
+  - macOS: `brew install make`
+  - Linux: `sudo apt-get install make`
 
 ## 🚀 Local Setup
 
@@ -65,8 +98,8 @@ Make sure you have the following installed:
    cp .env-example .env
    ```
 
-   * A `.env` file **should be present** for configuration.
-   * All variables in `.env-example` are commented.
+   - A `.env` file **should be present** for configuration.
+   - All variables in `.env-example` are commented.
      You can customize any environment setting by **uncommenting** the relevant line and providing a new value.
 
 3. Start Docker desktop and ensure it is running.
@@ -81,11 +114,12 @@ Make sure you have the following installed:
 
 5. After startup:
 
-   * Frontend UI: [http://localhost:3000/](http://localhost:3000/)
-   * Swagger API Docs: [http://localhost:8000/docs#/](http://localhost:8000/docs#/)
+   - Frontend UI: [http://localhost:3000/](http://localhost:3000/)
+   - Swagger API Docs: [http://localhost:8000/docs#/](http://localhost:8000/docs#/)
 
 ## 👾 Supported Providers and Models
-* OpenAI: gpt-4o
+
+- OpenAI: gpt-4o
 
 ## 🌐 Ngrok Setup (Optional)
 
@@ -93,14 +127,14 @@ Ngrok can be used to expose the local WebSocket endpoint.
 
 1. Install Ngrok:
 
-   * macOS (Homebrew): `brew install ngrok/ngrok/ngrok`
-   * Linux: `sudo snap install ngrok`
+   - macOS (Homebrew): `brew install ngrok/ngrok/ngrok`
+   - Linux: `sudo snap install ngrok`
 
 2. Authenticate Ngrok:
 
-   * Sign up or log in at [ngrok dashboard](https://dashboard.ngrok.com).
-   * Go to the **"Your Authtoken"** section and copy the token.
-   * Run the command:
+   - Sign up or log in at [ngrok dashboard](https://dashboard.ngrok.com).
+   - Go to the **"Your Authtoken"** section and copy the token.
+   - Run the command:
 
      ```bash
      ngrok config add-authtoken <YOUR_AUTH_TOKEN>
@@ -120,7 +154,10 @@ Ngrok can be used to expose the local WebSocket endpoint.
 
 ---
 
-## 🤖GenAI Agent registration quick start (For more data check [CLI](cli/README.md))
+## 🤖 Surgenix Agent Registration Quick Start
+
+For detailed instructions on all agents, see the [CLI README](cli/README.md) and individual agent directories.
+
 ```bash
 cd cli/
 
@@ -132,15 +169,24 @@ python cli.py register_agent --name <agent_name> --description <agent_descriptio
 
 cd agents/
 
-# Run the agent
-uv run python <agent_name>.py # or alternatively 
-python <agent_name>.py 
+# Run the agent (using uv - recommended)
+uv sync  # Install dependencies
+uv run python <agent_name>.py
+
+# Or alternatively with python directly
+python <agent_name>.py
 ```
+
+### 🏥 **Pre-built Surgenix Agents Ready to Run:**
+
+- `welcome_agent.py` - Patient greeting and onboarding
+- `discharge_summary.py` - Medical document processing
+- `activity_agent.py` - Recovery exercise recommendations
 
 ## 💎 Environment Variables
 
 | Variable                    | Description                                                          | Example / Default                                                                       |
-|-----------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| --------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `FRONTEND_PORT`             | Port to start a frontend                                             | `3000` - default. Can be changed by run in terminal ` source FRONTEND_PORT=<your_port>` |
 | `ROUTER_WS_URL`             | WebSocket URL for the `router` container                             | `ws://genai-router:8080/ws` - host is either `localhost` or `router` container name     |
 | `SECRET_KEY`                | Secret key for cryptographic operations - JWT/ LLM config encryption | `$(openssl rand -hex 32)`                                                               |
@@ -159,13 +205,15 @@ python <agent_name>.py
 ## 🛠️ Troubleshooting
 
 ### ❓ MCP server or A2A card URL could not be accessed by the genai-backend
+
 ✅ If your MCP server or A2A card is hosted on your local machine, make sure to change the host name from `http://localhost:<your_port>` to `http://host.docker.internal:<your_port>` and try again.
 
 🔎 **Also make sure to pass the full url of your MCP server or A2A card, such as - `http://host.docker.internal:8000/mcp` for MCP or `http://host.docker.internal:10002` for A2A**
 
 ⚠️ No need to specify `/.well-known/agent.json` for your A2A card as `genai-backend` will do it for you!
 
-### ❓ My MCP server with valid host cannot be accessed by the genai-backend 
+### ❓ My MCP server with valid host cannot be accessed by the genai-backend
+
 ✅ Make sure your MCP server supports `streamable-http` protocol and is remotely accessible.Also make sure that you're specifiying full URL of your server, like - `http://host.docker.internal:8000/mcp`
 
 ⚠️ Side note: `sse` protocol is officially deprecated by MCP protocol devs, `stdio` protocol is not supported yet, but stay tuned for future announcements!
