@@ -39,6 +39,10 @@ All built agents, MCP servers, and A2A cards are located in the **`cli/`** direc
 
 Each component includes comprehensive documentation, setup instructions, and usage examples. See the individual README files for detailed information.
 
+### 🔧 **Enhanced Master Agent**
+
+- **Updated Master Agent Prompt** - [`updated_master_agent_prompt.md`](updated_master_agent_prompt.md) - Optimized prompt for healthcare scenarios and Surgenix agent integration (see configuration instructions below)
+
 ## 🛠️ Readme Files
 
 - [CLI](cli/README.md)
@@ -116,6 +120,30 @@ Make sure you have the following installed:
 
    - Frontend UI: [http://localhost:3000/](http://localhost:3000/)
    - Swagger API Docs: [http://localhost:8000/docs#/](http://localhost:8000/docs#/)
+
+## 🔧 Surgenix Master Agent Configuration
+
+### 📝 **Custom Master Agent Prompt**
+
+For optimal Surgenix patient care functionality, use the **enhanced master agent prompt** provided in this repository:
+
+1. **Navigate to the GenAI Agent UI**: [http://localhost:3000/](http://localhost:3000/)
+
+2. **Configure OpenAI Model**:
+
+   - Go to the model configuration section
+   - Add your OpenAI API key
+   - Select GPT-4o as the model
+
+3. **Replace Master Agent Prompt**:
+
+   - Copy the contents from [`updated_master_agent_prompt.md`](updated_master_agent_prompt.md)
+   - Paste this prompt in the **Master Agent Prompt** field in the UI
+   - This enhanced prompt is specifically optimized for Surgenix healthcare agents
+
+4. **Save Configuration** to apply the new settings
+
+The updated prompt includes specialized instructions for healthcare scenarios, patient care workflows, and improved integration with Surgenix agents.
 
 ## 👾 Supported Providers and Models
 
